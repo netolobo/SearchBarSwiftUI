@@ -31,7 +31,7 @@ struct ContentView: View {
     ]
     
     private var searchResults : [String] {
-        searchText.isEmpty ? countries : countries.filter { $0.contains(searchText) }
+        searchText.isEmpty ? countries : countries.filter { $0.localizedCaseInsensitiveContains(searchText) }
     }
 
     var body: some View {
